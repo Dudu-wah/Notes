@@ -47,4 +47,17 @@ app.delete("/note/:id", (req, res) => {
     res.status(404).send()
 })
 
+app.put("/note/:id", (req, res) => {
+    const id = Number(req.params.id)
+
+    for (const note of notes){
+        if (note.id === id){
+            note.title = req.body.title
+            note.content = req.body.content
+            res.status(200).send()
+            return
+        }
+    }
+    res.status(404).send()
+})
 
