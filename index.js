@@ -8,9 +8,8 @@ const PORT = 3000;
 app.use(cors())
 app.use(express.json())
 
-app.get("/", (req, res) => {
-    res.status(200).sendFile(path.join(__dirname, 'index.html'))
-})
+// Serve static files from the `front` directory
+app.use(express.static(path.join(__dirname, 'front')))
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);

@@ -1,0 +1,49 @@
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 16px;
+}
+
+input { 
+    display: block; 
+    margin: 8px 0; 
+    padding: 8px; 
+    width: 100%;
+}
+
+#saveNote { 
+    padding: 8px 12px;
+}
+
+#notesContainer > div { 
+    border: 10px solid #ddd; 
+    padding: 8px; 
+    margin: 8px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0; 
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteButton {
+    margin-right: 5px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Notas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Minhas Notas</h1>
+    <input type="text" id="noteTitle" placeholder="Título da nota">
+    <input type="text" id="noteContent" placeholder="Conteúdo da nota">
+    <button id="saveNote">Salvar Nota</button>
+    <div id="notesContainer"></div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Editar nota</h2>
+            
+            <input type="text" id="newTitle" placeholder="Novo título">
+            <input type="text" id="newContent" placeholder="Novo conteúdo">
+
+            <div class="buttons">
+                <button onclick="closeModal()">Cancelar</button>
+                <button onclick="submitData()">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
