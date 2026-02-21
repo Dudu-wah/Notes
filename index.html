@@ -63,6 +63,7 @@
     <script>
         let selectedId;
         let selectedDiv;
+        const apiUrl = 'http://localhost:3000';
 
         const saveNoteButton = document.getElementById('saveNote');
         const noteTitleInput = document.getElementById('noteTitle');
@@ -70,7 +71,7 @@
         const notesContainer = document.getElementById('notesContainer');
 
         // Carrega notas do servidor
-        fetch('/notes')
+        fetch(`${apiUrl}/notes`)
             .then(response => response.json())
             .then(data => {
                 data.forEach(note => {
@@ -89,7 +90,7 @@
                 return;
             }
 
-            fetch('/note', {
+            fetch(`${apiUrl}/note`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title, content })
@@ -126,7 +127,7 @@
             editButton.textContent = "Editar"
 
             deleteButton.addEventListener('click', () => {
-                fetch(`/note/${id}`, {
+                fetch(`${apiUrl}/note/${id}`, {
                     method:"DELETE",
                 })
                 .then(response => {
@@ -169,7 +170,7 @@
             const newTitle = document.getElementById('newTitle');
             const newContent = document.getElementById('newContent');
 
-            fetch(`/note/${selectedId}`, {
+            fetch(`${apiUrl}/note/${selectedId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title: newTitle.value, content: newContent.value })
